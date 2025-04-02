@@ -3,11 +3,13 @@ const tf = require('@tensorflow/tfjs-node');
 const axios = require('axios');
 const sharp = require('sharp');
 const fs = require('fs').promises;
+var cors = require('cors')
 
 const app = express();
 const port = 3000;
 
 app.use(express.json());
+app.use(cors())
 
 // Load labels from labels.txt
 async function loadLabels() {
